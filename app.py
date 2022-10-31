@@ -5,6 +5,7 @@ import aws_cdk as cdk
 
 from rostrum.rostrum_stack import RostrumStack
 
+CDK_ACCOUNT = os.getenv('CDK_HARRY_ACCOUNT')
 
 app = cdk.App()
 RostrumStack(app, "RostrumStack",
@@ -20,7 +21,7 @@ RostrumStack(app, "RostrumStack",
     # Uncomment the next line if you know exactly what Account and Region you
     # want to deploy the stack to. */
 
-    env=cdk.Environment(account='797628318271', region='us-east-1'),
+    env=cdk.Environment(account=CDK_ACCOUNT, region='us-east-1'),
 
     # For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html
     )
