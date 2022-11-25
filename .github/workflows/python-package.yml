@@ -1,10 +1,6 @@
 name: Python package
 
-on:
-  push:
-    branches: [ 'refs/heads/master' ]
-  pull_request:
-    branches: [ 'refs/heads/master' ]
+on: [push]
 
 jobs:
   build:
