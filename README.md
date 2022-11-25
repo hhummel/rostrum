@@ -7,6 +7,10 @@ The plan is to use tools created by or recommended by the HealthVerity Platform 
 This repo uses Python, but the native language for the CDK is Typecript. A possible next step would be to complete a similar exercise in Typescript and see if it's easier or clearer or otherwise superior.
 
 ## Some potentially useful boilerplate
+AWS CDK is written in Typescript, so if neccessary install it:
+```
+$ sudo npm install -g aws-cdk
+```
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 
