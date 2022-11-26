@@ -47,4 +47,4 @@ jobs:
     - name: Deploy with CDK
       run: |
         # Deploy stack with cdk
-        cdk synth 
+        cdk deploy
