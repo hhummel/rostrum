@@ -2,6 +2,7 @@ from aws_cdk import (
     Duration,
     Stack,
     aws_sqs as sqs,
+    aws_events as events,
 )
 from constructs import Construct
 
@@ -16,4 +17,9 @@ class RostrumStack(Stack):
         queue = sqs.Queue(
             self, "RostrumQueue",
             visibility_timeout=Duration.seconds(300),
+        )
+
+        # Create an EventBus 
+        bus = events.EventBus(self, "bus",
+            event_bus_name="RostrumEventBus"
         )
