@@ -44,10 +44,14 @@ jobs:
         aws-region: ${{ secrets.AWS_REGION }}
     - name: Install CDK
 <<<<<<< HEAD
+<<<<<<< HEAD
       run: npm install aws-cdk  
 =======
       run: sudo npm install -g aws-cdk 
 >>>>>>> eed0211 (WIP)
+=======
+      run: sudo npm install -g aws-cdk 
+>>>>>>> 1409a0e (Sudo npm)
     - name: Deploy with CDK
       run: |
         # Deploy stack with cdk
