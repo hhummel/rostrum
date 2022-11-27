@@ -20,6 +20,11 @@ class RostrumStack(Stack):
         )
 
         # Create an EventBus 
-        bus = events.EventBus(self, "bus",
-            event_bus_name="RostrumEventBus"
+        bus = events.EventBus(self, "RostrumEventBus",
+            event_bus_name="RostrumEventBus",
+        )
+
+        #Create a rule
+        rule = events.Rule(self, "FiveMinutes",
+            schedule=events.Schedule.rate(Duration.minutes(5)),
         )
