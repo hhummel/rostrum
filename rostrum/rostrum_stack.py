@@ -11,7 +11,7 @@ class RostrumStack(Stack):
     def __init__(self, scope: Construct, construct_id: str, **kwargs) -> None:
         super().__init__(scope, construct_id, **kwargs)
 
-        # The code that defines your stack goes here
+        # The code that defines your stack goes here!
 
         # example resource
         queue = sqs.Queue(
@@ -24,7 +24,7 @@ class RostrumStack(Stack):
             event_bus_name="RostrumEventBus",
         )
 
-        # #Create a rule
-        # rule = events.Rule(self, "FiveMinutes",
-        #     schedule=events.Schedule.rate(Duration.minutes(5)),
-        # )
+        #Create a rule
+        rule = events.Rule(self, "FiveMinutes",
+            schedule=events.Schedule.rate(Duration.minutes(5)),
+        )
