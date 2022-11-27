@@ -19,13 +19,29 @@ class RostrumStack(Stack):
             event_bus_name="RostrumEventBus",
         )
 
+        # Create a policy (maybe needed)
+        policy = {
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Action": [
+                        "events:PutEvents"
+                    ],
+                    "Resource": [
+                        "arn:aws:events:us-east-1:726478576674:event-bus/RostrumEventBus"
+                    ]
+                }
+            ]
+        }
+
         # Create a rule
         rule = events.Rule(self, "FiveMinutes",
             schedule=events.Schedule.rate(Duration.minutes(5)),
         )
 
-        # Grant put events
+        # Grant put events (fails)
         #bus.grant_put_events_to(rule)
 
-        # Add EventBridge target to rule
+        # Add EventBridge target to rule (fails without permissions)
         #rule.add_target(targets.EventBus(bus))
