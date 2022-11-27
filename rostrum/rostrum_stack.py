@@ -3,6 +3,7 @@ from aws_cdk import (
     Stack,
     aws_sqs as sqs,
     aws_events as events,
+    aws_events_targets as targets,
 )
 from constructs import Construct
 
@@ -24,7 +25,10 @@ class RostrumStack(Stack):
             event_bus_name="RostrumEventBus",
         )
 
-        #Create a rule
+        # Create a rule
         rule = events.Rule(self, "FiveMinutes",
             schedule=events.Schedule.rate(Duration.minutes(5)),
         )
+
+        # Add EventBridge target to rule
+        rule.add_target(targets.EventBus(bus))
