@@ -24,7 +24,7 @@ class RostrumStack(Stack):
             event_bus_name="RostrumEventBus",
         )
 
-        #Create a rule
-        rule = events.Rule(self, "FiveMinutes",
-            schedule=events.Schedule.rate(Duration.minutes(5)),
-        )
+        # #Create a rule
+        # rule = events.Rule(self, "FiveMinutes",
+        #     schedule=events.Schedule.rate(Duration.minutes(5)),
+        # )
